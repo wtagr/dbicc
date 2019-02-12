@@ -56,7 +56,7 @@
 #' J <- 4
 #' 
 #' # generate the sample of R^2 points
-#' varl <- 4 # variance of the 2-d normal distribution
+#' varl <- .25 # variance of the 2-d normal distribution
 #' pij <- R2gen(I,J,variance=varl)
 #' 
 #' # calculate the squared distance matrix via Euclidean distance
