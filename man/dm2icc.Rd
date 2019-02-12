@@ -35,7 +35,52 @@ the replacement, which is used in the boostrap confidence intervals, can be reac
 %% ~~further notes~~
 }
 \examples{
-#under construction
+
+##Point estimates of dbICC
+
+# Generation function for R^2 points from multi-normal distribution
+R2gen<-function(nsub,nmea,m=1,variance,sds=NULL,pt=F){
+    if (is.null(sds)==F) set.seed(sds)
+    if (length(nmea)==1) nmea<-rep(1,nsub)*nmea
+    sig1<-diag(rep(variance,2))
+    mu<-c(0,0)
+    sig2<-diag(rep(1,2))
+    t<-MASS::mvrnorm(nsub,mu,sig2)
+    e<-MASS::mvrnorm(sum(nmea),mu,sig1/m)
+    p<-matrix(apply(t,2,rep,times=nmea),ncol=2)+e#(I*J)x2
+    if (pt==T) return(list(t=t,p=p))
+    if (pt==F) return(p)
+}
+
+# set the number of the point
+I <- 10
+
+# set the number of the measurement for each point
+J <- 4
+
+# generate the sample of R^2 points
+varl <- 4 # variance of the 2-d normal distribution
+pij <- R2gen(I,J,variance=varl)
+
+# calculate the squared distance matrix via Euclidean distance
+distmat<-as.matrix(dist(pij)^2)
+
+#plot the squared distance matrix
+plotdmat(distmat,I,J)
+
+# dbICC value
+dm2icc(distmat,I,J)
+
+##Bootstrap Confident intervals
+
+B <- 500
+bicc <- numeric(B)
+for (b in 1:B){
+    bs <- sort(sample(I, replace = T))
+    bicc[b] <- dm2icc(distmat,I,J,bootsamp=bs)
+}
+
+quantile(bicc, c(.025, .975))
 
 }
 \references{
