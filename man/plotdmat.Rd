@@ -26,7 +26,7 @@ distance and between-distance based on \code{ggplot2}.
 %% ~~further notes~~
 }
 \examples{
-#under construction
+\\code{\\link{dm2icc}}
 
 }
 \references{

@@ -26,7 +26,7 @@
 #' @import ggplot2
 #' @import reshape2
 #' @examples
-#' #under construction
+#' \code{\link{dm2icc}}
 #' 
 plotdmat <-
 function(dmat, nsub, nmea,xlab=NULL){
