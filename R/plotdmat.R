@@ -4,7 +4,7 @@
 #' distance and between-distance based on \code{ggplot2}.
 #' 
 #' 
-#' @param dmat A distance matrix
+#' @param dmat A squared distance matrix
 #' @param nsub Number of the subject or individual
 #' @param nmea A vector of number of the measurement for each subject or individual
 #' @param xlab The title for the x axis

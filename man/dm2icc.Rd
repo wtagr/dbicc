@@ -7,7 +7,7 @@
 dm2icc(dmat, nsub, nmea, bootsamp = 1:nsub, adhoc = FALSE)
 }
 \arguments{
-\item{dmat}{A distance matrix, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
+\item{dmat}{A squared distance matrix, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
 columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to
 Reiss el at., 2019.}
 
@@ -26,9 +26,9 @@ estimating the dbICC from a bootstrap sample. Default is \code{FALSE}.}
 A scalar, giving the dbICC value
 }
 \description{
-This is a function to calculate the value of dbICC through the related distance matrix. 
+This is a function to calculate the value of dbICC through the related squared distance matrix. 
 For example, when the distance among any test-retest datatype can be defined, its reliability 
-performed in DRAFT can be obtained by this function. A sample of the certain subjects with 
+performed in Reiss et al. (2019) can be obtained by this function. A sample of the certain subjects with 
 the replacement, which is used in the boostrap confidence intervals, can be reached as well.
 }
 \note{

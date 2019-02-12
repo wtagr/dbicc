@@ -7,7 +7,7 @@
 plotdmat(dmat, nsub, nmea, xlab = NULL)
 }
 \arguments{
-\item{dmat}{A distance matrix}
+\item{dmat}{A squared distance matrix}
 
 \item{nsub}{Number of the subject or individual}
 
