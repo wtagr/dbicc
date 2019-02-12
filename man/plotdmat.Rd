@@ -26,7 +26,7 @@ distance and between-distance based on \code{ggplot2}.
 %% ~~further notes~~
 }
 \examples{
-\\code{\\link{dm2icc}}
+# See example for dm2icc
 
 }
 \references{
@@ -38,6 +38,6 @@ distance and between-distance based on \code{ggplot2}.
 \code{\link{dm2icc}}
 }
 \author{
-Philip Reiss \email{reiss@stat.haifa.ac.il}, Meng Xu \email{mxu@campus.haifa.ac.il}
+Meng Xu \email{mxu@campus.haifa.ac.il}
 }
 \keyword{}

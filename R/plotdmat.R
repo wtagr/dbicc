@@ -13,7 +13,7 @@
 #' 
 #' @note %% ~~further notes~~
 #' 
-#' @author Philip Reiss \email{reiss@@stat.haifa.ac.il}, Meng Xu \email{mxu@@campus.haifa.ac.il}
+#' @author Meng Xu \email{mxu@@campus.haifa.ac.il}
 #' 
 #' @seealso \code{\link{dm2icc}}
 #' 
@@ -26,7 +26,7 @@
 #' @import ggplot2
 #' @import reshape2
 #' @examples
-#' \code{\link{dm2icc}}
+#' # See example for dm2icc
 #' 
 plotdmat <-
 function(dmat, nsub, nmea,xlab=NULL){
