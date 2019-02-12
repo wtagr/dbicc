@@ -1,0 +1,12 @@
+Package: dbicc
+Type: Package
+Title: Generalized test-retest reliability
+Version: 0.1
+Date: 2019-02-11
+Author: Philip Reiss, Meng Xu 
+Maintainer: Meng Xu <mxu@campus.haifa.ac.il>
+Depends: R (>= 3.5.0)
+Imports: Matrix, ggplot2, reshape2
+Description: Distance-based Intraclass Correlation Coefficient (dbICC) is a new reliability measure for general data objects. The dbICC is an extension of multivariate reliability referred to R_T (Alonso et al. 2010) and I2C2 (Shou et al., 2013) to more general distances and data types. See DRAFT for details.
+License: GPL (>= 2)
+RoxygenNote: 6.1.1
