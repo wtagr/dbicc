@@ -28,7 +28,7 @@
 #' @keywords package
 #' @examples
 #' 
-#' #under construction
+#' See example for dm2icc
 #' 
 NULL
 

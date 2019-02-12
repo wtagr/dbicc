@@ -19,7 +19,7 @@ c("\\Sexpr[results=rd,stage=build]{tools:::Rd_package_indices(\"#1\")}",
 }
 \examples{
 
-#under construction
+See example for dm2icc
 
 }
 \references{

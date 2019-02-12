@@ -26,9 +26,9 @@ estimating the dbICC from a bootstrap sample. Default is \code{FALSE}.}
 A scalar, giving the dbICC value
 }
 \description{
-This is a function to calculate the value of dbICC through the related squared distance matrix. 
-For example, when the distance among any test-retest datatype can be defined, its reliability 
-performed in Reiss et al. (2019) can be obtained by this function. A sample of the certain subjects with 
+When the distance among any test-retest datatype can be defined, its reliability 
+performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
+value of dbICC through the related squared distance matrix. A sample of the certain subjects with 
 the replacement, which is used in the boostrap confidence intervals, can be reached as well.
 }
 \note{
