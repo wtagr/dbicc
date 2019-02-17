@@ -23,8 +23,8 @@
 #' }
 #' @keywords
 #' 
-#' @import ggplot2
-#' @import reshape2
+#' @import ggplot2 reshape2
+#' @export 
 #' @examples
 #' # See example for dm2icc
 #' 

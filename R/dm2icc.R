@@ -29,15 +29,15 @@
 #' }
 #' 
 #' @keywords dbICC, distance matrix, reliability
-#' @import Matrix
-#' 
+#' @import Matrix MASS
+#' @export
 #' @examples
 #' 
 #' ##Point estimates of dbICC
 #' 
 #' # Generation function for R^2 points from multi-normal distribution
-#' R2gen<-function(nsub,nmea,m=1,variance,sds=NULL,pt=F){
-#'     if (is.null(sds)==F) set.seed(sds)
+#' R2gen<-function(nsub,nmea,m=1,variance,sds=NULL,pt=FALSE){
+#'     if (is.null(sds)==FALSE) set.seed(sds)
 #'     if (length(nmea)==1) nmea<-rep(1,nsub)*nmea
 #'     sig1<-diag(rep(variance,2))
 #'     mu<-c(0,0)
@@ -45,8 +45,8 @@
 #'     t<-MASS::mvrnorm(nsub,mu,sig2)
 #'     e<-MASS::mvrnorm(sum(nmea),mu,sig1/m)
 #'     p<-matrix(apply(t,2,rep,times=nmea),ncol=2)+e#(I*J)x2
-#'     if (pt==T) return(list(t=t,p=p))
-#'     if (pt==F) return(p)
+#'     if (pt==TRUE) return(list(t=t,p=p))
+#'     if (pt==FALSE) return(p)
 #' }
 #' 
 #' # set the number of the point
@@ -73,7 +73,7 @@
 #' B <- 500
 #' bicc <- numeric(B)
 #' for (b in 1:B){
-#'     bs <- sort(sample(I, replace = T))
+#'     bs <- sort(sample(I, replace = TRUE))
 #'     bicc[b] <- dm2icc(distmat,I,J,bootsamp=bs)
 #' }
 #' 
