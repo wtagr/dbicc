@@ -4,9 +4,10 @@
 #' distance and between-distance based on \code{ggplot2}.
 #' 
 #' 
-#' @param dmat A squared distance matrix
+#' @param dmat A distance matrix
 #' @param nsub Number of the subject or individual
-#' @param nmea A vector of number of the measurement for each subject or individual
+#' @param nmea A vector containing number of the measurement for each subject or individual; 
+#' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
 #' @param xlab The title for the x axis
 #' 
 #' @return A ggplot object

@@ -1,10 +1,8 @@
-#' Distance-based Intraclass Correlation Coefficient (dbICC)
+#' Bootstrap Confidence intervals for dbICC
 #' 
-#' When the distance among any test-retest datatype can be defined, its reliability 
-#' performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
-#' value of dbICC through the related squared distance matrix. A sample of the certain subjects with 
-#' the replacement, which is used in the boostrap confidence intervals, can be reached as well.  
-#' 
+#' Nonparametric bootstrapping can be used to construct confidence 
+#' intervals for the Distance-based Intraclass Correlation Coefficient 
+#' (dbICC).  
 #' 
 #' @param dmat A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
 #' columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to
@@ -12,19 +10,22 @@
 #' @param nsub Number of the subject or individual.
 #' @param nmea A vector containing number of the measurement for each subject or individual; 
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
+#' @param bootsamp A vector requiring a sample with the replacement.
 #' 
+#' @param adhoc A logical variable, whether to apply the ad hoc correction when
+#' estimating the dbICC from a bootstrap sample. Default is \code{FALSE}.
 #' @return A scalar, giving the dbICC value
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}, Philip Reiss
 #' 
-#' @seealso \code{\link{plotdmat}},\code{\link{boot.dbicc}}
+#' @seealso \code{\link{plotdmat}},\code{\link{dm2icc}}
 #' 
 #' @references
 #' \itemize{
 #' \item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
 #' }
 #' 
-#' @keywords dbICC, reliability
+#' @keywords Bootstrap, dbICC, reliability
 #' @import Matrix MASS
 #' @export
 #' @examples
@@ -58,16 +59,20 @@
 #' # calculate the squared distance matrix via Euclidean distance
 #' distmat<-as.matrix(dist(pij))
 #' 
-#' #plot the squared distance matrix
-#' plotdmat(distmat,I,J)
+#' ##Bootstrap Confident intervals
 #' 
-#' # dbICC value
-#' dm2icc(distmat,I,J)
+#' B <- 500
+#' bicc <- numeric(B)
+#' for (b in 1:B){
+#'     bs <- sort(sample(I, replace = TRUE))
+#'     bicc[b] <- boot.dbicc(distmat,I,J,bootsamp=bs)
+#' }
 #' 
+#' quantile(bicc, c(.025, .975))
 #' 
  
-dm2icc <-
-function(dmat, nsub, nmea) {
+boot.dbicc <-
+function(dmat, nsub, nmea, bootsamp, adhoc = FALSE) {
   #nmea: the number of the measurement
   if (length(nmea)==1) nmea<-rep(nmea,nsub)
   dmat<-as.matrix(dmat^2)
@@ -76,6 +81,16 @@ function(dmat, nsub, nmea) {
   bmask <- matrix(1, sum(nmea), sum(nmea)) - wmask
   wmask[wmask == 0] <- bmask[bmask == 0] <- NA
   bmask.ah <- bmask
-  dboot<-dmat
+  if (!all(1:nsub %in% bootsamp)){
+    wibs <- sapply(bootsamp, function(i) sum(nmea[1:i - 1]) + 1:nmea[i])
+    dboot <- dmat[wibs, wibs]
+    if (adhoc) {
+      for (ii in 1:(nsub - 1))
+        for (jj in (ii + 1):nsub) {
+          if (bootsamp[ii] == bootsamp[jj]) bmask.ah[(sum(nmea[1:ii - 1]) + 1:nmea[ii]), (sum(nmea[1:jj - 1]) + 1:nmea[jj])] <- bmask.ah[(sum(nmea[1:jj - 1]) + 1:nmea[jj]), (sum(nmea[1:ii - 1]) + 1:nmea[ii])] <- NA
+        }
+    }
+  }
+  else dboot<-dmat
   1 - mean(dboot * wmask, na.rm = TRUE) / mean(dboot * bmask.ah, na.rm = TRUE)
 }

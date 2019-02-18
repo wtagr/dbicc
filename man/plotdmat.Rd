@@ -7,11 +7,12 @@
 plotdmat(dmat, nsub, nmea, xlab = NULL)
 }
 \arguments{
-\item{dmat}{A squared distance matrix}
+\item{dmat}{A distance matrix}
 
 \item{nsub}{Number of the subject or individual}
 
-\item{nmea}{A vector of number of the measurement for each subject or individual}
+\item{nmea}{A vector containing number of the measurement for each subject or individual; 
+if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.}
 
 \item{xlab}{The title for the x axis}
 }

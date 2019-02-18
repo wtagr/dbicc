@@ -1,9 +1,9 @@
 Package: dbicc
 Type: Package
-Title: Generalized test-retest reliability
+Title: Generalized test-retest reliability measure
 Version: 0.1
 Date: 2019-02-11
-Author: Philip Reiss, Meng Xu 
+Author: Meng Xu, Philip Reiss
 Maintainer: Meng Xu <mxu@campus.haifa.ac.il>
 Depends: R (>= 3.5.0)
 Imports: Matrix, ggplot2, reshape2, MASS
