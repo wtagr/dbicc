@@ -11,8 +11,7 @@
 #' @param xlab The title for the x axis
 #' 
 #' @return A ggplot object
-#' 
-#' @note %% ~~further notes~~
+
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}
 #' 
@@ -22,7 +21,7 @@
 #' \itemize{
 #' \item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
 #' }
-#' @keywords
+#' @keywords Distance matrix
 #' 
 #' @import ggplot2 reshape2
 #' @export 
@@ -44,9 +43,9 @@ function(dmat, nsub, nmea,xlab=NULL){
     A<-melt(dmat)
     colnames(A)<-c('x','y','value')
     B<-data.frame(xyl)
-    p<-ggplot(A,aes(x,y))+geom_raster(aes(fill=value))+
-      geom_path(data=B,aes(x,y),color="red")+
-      geom_path(data=B,aes(y,x),color="red")+xlab(xlab)+
+    p<-ggplot(A,aes_(~x,~y))+geom_raster(aes_(fill=~value))+
+      geom_path(data=B,aes_(~x,~y),color="red")+
+      geom_path(data=B,aes_(~y,~x),color="red")+xlab(xlab)+
       theme(legend.position = "none",
             panel.grid = element_blank(),
             axis.title.y = element_blank(),

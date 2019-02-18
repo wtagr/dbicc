@@ -23,9 +23,6 @@ A ggplot object
 This function is to plot the distance matrix in dbICC including the segmentation boundary (colored in red) between the within-
 distance and between-distance based on \code{ggplot2}.
 }
-\note{
-%% ~~further notes~~
-}
 \examples{
 # See example for dm2icc
 
@@ -41,4 +38,5 @@ distance and between-distance based on \code{ggplot2}.
 \author{
 Meng Xu \email{mxu@campus.haifa.ac.il}
 }
-\keyword{}
+\keyword{Distance}
+\keyword{matrix}
