@@ -31,6 +31,7 @@
 plotdmat <-
 function(dmat, nsub, nmea,xlab=NULL){
     # plot dist matrix with boundary between within and between distance 
+    dmat<-as.matrix(dmat)
     if (length(nmea)==1) nmea=rep(nmea,nsub)
     blkfun<-function(i) sum(nmea[1:i-1])+c(1,nmea[i])
     blkm<-function(i) c(0,-nmea[i]+1)
