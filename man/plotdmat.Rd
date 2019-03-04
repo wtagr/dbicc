@@ -7,7 +7,9 @@
 plotdmat(dmat, nsub, nmea, xlab = NULL)
 }
 \arguments{
-\item{dmat}{A distance matrix}
+\item{dmat}{A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
+columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to
+Reiss el at., 2019.}
 
 \item{nsub}{Number of the subject or individual}
 
@@ -33,7 +35,7 @@ distance and between-distance based on \code{ggplot2}.
 }
 }
 \seealso{
-\code{\link{dm2icc}}
+\code{\link{dm2icc}},\code{\link{boot.dbicc}}
 }
 \author{
 Meng Xu \email{mxu@campus.haifa.ac.il}

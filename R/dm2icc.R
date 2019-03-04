@@ -37,7 +37,7 @@
 #'     if (length(nmea)==1) nmea<-rep(1,nsub)*nmea
 #'     sig1<-diag(rep(variance,2))
 #'     mu<-c(0,0)
-#'     sig2<-diag(rep(1,2))
+#'     sig2<-diag(rep(1,2)) # true-value variance of the 2-d normal distribution
 #'     t<-MASS::mvrnorm(nsub,mu,sig2)
 #'     e<-MASS::mvrnorm(sum(nmea),mu,sig1/m)
 #'     p<-matrix(apply(t,2,rep,times=nmea),ncol=2)+e#(I*J)x2
@@ -52,7 +52,7 @@
 #' J <- 4
 #' 
 #' # generate the sample of R^2 points
-#' varl <- .25 # variance of the 2-d normal distribution
+#' varl <- .25 # error variance of the 2-d normal distribution
 #' pij <- R2gen(I,J,variance=varl)
 #' 
 #' # calculate the squared distance matrix via Euclidean distance
