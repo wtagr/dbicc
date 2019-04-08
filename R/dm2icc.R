@@ -6,6 +6,8 @@
 #' the replacement, which is used in the boostrap confidence intervals, can be reached 
 #' as well. 
 #' 
+#' \if{latex}{\figure{bwmat2}{Supply-demand}}
+#' 
 #' 
 #' @param dmat A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
 #' columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to

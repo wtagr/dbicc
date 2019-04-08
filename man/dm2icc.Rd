@@ -26,6 +26,9 @@ value of dbICC through the related distance matrix. A sample of the certain subj
 the replacement, which is used in the boostrap confidence intervals, can be reached 
 as well.
 }
+\details{
+\if{latex}{\figure{bwmat2}{Supply-demand}}
+}
 \examples{
 
 ##Point estimates of dbICC
