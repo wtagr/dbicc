@@ -30,7 +30,7 @@ as well.
 Schematic diagram of a matrix of distances among repeated observations of
 nine subjects, with rows and columns grouped by subject. Distances in the half-squares along
 the diagonal are within-individual (W), while the rest are between-individual
-\if{latex}{\figure{bwmat2}{Schematic diagram of Distance Matrix (a) and bootstrap process(b)}}
+\if{latex}{\figure{bwmat2.pdf}{Schematic diagram of Distance Matrix (a) and bootstrap process(b)}}
 }
 \examples{
 
