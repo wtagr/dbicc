@@ -7,7 +7,7 @@ Author: Meng Xu, Philip Reiss
 Maintainer: Meng Xu <mxu@campus.haifa.ac.il>
 Depends: R (>= 3.5.0)
 Imports: Matrix, ggplot2, reshape2, MASS
-Description: Distance-based Intraclass Correlation Coefficient (dbICC) is a new reliability measure for general data objects. The dbICC is an extension of multivariate reliability referred to R_T (Alonso et al. 2010) and I2C2 (Shou et al., 2013) to more general distances and data types. See DRAFT for details.
+Description: Distance-based Intraclass Correlation Coefficient (dbICC) is a new reliability measure for general data objects. The dbICC is an extension of current reliability measures adapted to more general distances and data types. 
 License: GPL (>= 2)
 RoxygenNote: 6.1.1
 Encoding: UTF-8

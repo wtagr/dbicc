@@ -22,8 +22,9 @@ A scalar, giving the dbICC value
 \description{
 When the distance among any test-retest datatype can be defined, its reliability 
 performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
-value of dbICC through the related squared distance matrix. A sample of the certain subjects with 
-the replacement, which is used in the boostrap confidence intervals, can be reached as well.
+value of dbICC through the related distance matrix. A sample of the certain subjects with 
+the replacement, which is used in the boostrap confidence intervals, can be reached 
+as well.
 }
 \examples{
 
@@ -66,7 +67,7 @@ dm2icc(distmat,I,J)
 }
 \references{
 \itemize{
-\item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
+\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. To be submitted.
 }
 }
 \seealso{
