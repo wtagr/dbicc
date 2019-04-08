@@ -57,7 +57,7 @@ pij <- R2gen(I,J,variance=varl)
 # calculate the squared distance matrix via Euclidean distance
 distmat<-as.matrix(dist(pij))
 
-#plot the squared distance matrix
+#plot the distance matrix
 plotdmat(distmat,I,J)
 
 # dbICC value
