@@ -2,15 +2,15 @@
 #' 
 #' Nonparametric bootstrapping can be used to construct confidence 
 #' intervals for the Distance-based Intraclass Correlation Coefficient 
-#' (dbICC).  
+#' (dbICC) based on samples of the subjects with replacement.
 #' 
 #' @param dmat A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
-#' columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to
+#' columns in the distance matrix is grouped by subjects or individuals. The details refer to Figure 1 of
 #' Reiss el at., 2019.
-#' @param nsub Number of the subject or individual.
+#' @param nsub Number of subject or individual.
 #' @param nmea A vector containing number of the measurement for each subject or individual; 
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
-#' @param bootsamp A vector requiring a sample with the replacement.
+#' @param bootsamp A sample with replacement.
 #' 
 #' @param adhoc A logical variable, whether to apply the ad hoc correction when
 #' estimating the dbICC from a bootstrap sample. Default is \code{FALSE}.

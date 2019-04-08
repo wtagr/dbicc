@@ -2,21 +2,15 @@
 #' 
 #' When the distance among any test-retest datatype can be defined, its reliability 
 #' performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
-#' value of dbICC through the related distance matrix. A sample of the certain subjects with 
-#' the replacement, which is used in the boostrap confidence intervals, can be reached 
-#' as well. 
-#' 
-#' Schematic diagram of a matrix of distances among repeated observations of
-#' nine subjects, with rows and columns grouped by subject. Distances in the half-squares along
-#' the diagonal are within-individual (W), while the rest are between-individual
+#' value of dbICC through the related distance matrix. 
 #' 
 #' 
 #' 
 #' @param dmat A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or
-#' columns in the distance matrix is sorted by groups of measurements for each subject or individual. The details refer to
+#' columns in the distance matrix is grouped of each subject or individual. The details refer to Figure 1 of
 #' Reiss el at., 2019.
-#' @param nsub Number of the subject or individual.
-#' @param nmea A vector containing number of the measurement for each subject or individual; 
+#' @param nsub Number of subject or individual.
+#' @param nmea A vector containing number of measurement for each subject or individual; 
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
 #' 
 #' @return A scalar, giving the dbICC value
