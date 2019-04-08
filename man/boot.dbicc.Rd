@@ -7,7 +7,7 @@
 boot.dbicc(dmat, nsub, nmea, bootsamp, adhoc = FALSE)
 }
 \arguments{
-\item{dmat}{A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
+\item{dmat}{A distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
 Note that the structure of the distance matrix, with the rows or
 columns is grouped by subjects or individuals. The details refer to Figure 1 of
 Reiss el at., 2019.}
