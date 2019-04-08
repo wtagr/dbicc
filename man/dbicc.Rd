@@ -2,7 +2,7 @@
 % Please edit documentation in R/dbicc.R
 \name{dbicc}
 \alias{dbicc}
-\title{Distance-based Intraclass Correlation Coefficient (dbICC)}
+\title{See \code{dm2icc}}
 \usage{
 dbicc()
 }

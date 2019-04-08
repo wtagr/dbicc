@@ -6,7 +6,10 @@
 #' the replacement, which is used in the boostrap confidence intervals, can be reached 
 #' as well. 
 #' 
-#' \if{latex}{\figure{bwmat2}{Supply-demand}}
+#' Schematic diagram of a matrix of distances among repeated observations of
+#' nine subjects, with rows and columns grouped by subject. Distances in the half-squares along
+#' the diagonal are within-individual (W), while the rest are between-individual
+#' \if{latex}{\figure{bwmat2}{Schematic diagram of Distance Matrix (a) and bootstrap process(b)}}
 #' 
 #' 
 #' @param dmat A distance matrix or a object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. Note that the order of the rows or

@@ -1,4 +1,4 @@
-#' Distance-based Intraclass Correlation Coefficient (dbICC)
+#' See \code{dm2icc}
 #' 
 #' Please move to \code{\link{dm2icc}}
 #' 
