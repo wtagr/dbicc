@@ -22,7 +22,7 @@
 #' 
 #' @references
 #' \itemize{
-#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. To be submitted.
+#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
 #' }
 #' 
 #' @keywords dbICC, reliability
