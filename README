@@ -1,2 +1,0 @@
-library(devtools)
-install_github("wtagr/dbicc",force = TRUE)
