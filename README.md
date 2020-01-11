@@ -3,6 +3,7 @@ Distance-based Intraclass Correlation Coefficient
 
 ## Usage
 library(devtools)
+
 install_github("wtagr/dbicc", force = TRUE)
 
 ## Reference
