@@ -18,7 +18,7 @@
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}, Philip Reiss
 #' 
-#' @seealso \code{\link{plotdmat}},\code{\link{boot.dbicc}}
+#' @seealso \code{\link{plotdmat}},\code{\link{dm2icc.bt}}
 #' 
 #' @references
 #' \itemize{

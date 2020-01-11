@@ -29,11 +29,11 @@ distance and between-distance based on \code{ggplot2}.
 }
 \references{
 \itemize{
-\item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
+\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
 }
 }
 \seealso{
-\code{\link{dm2icc}},\code{\link{boot.dbicc}}
+\code{\link{dm2icc}},\code{\link{dm2icc.bt}}
 }
 \author{
 Meng Xu \email{mxu@campus.haifa.ac.il}

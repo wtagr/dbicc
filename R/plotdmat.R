@@ -15,11 +15,11 @@
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}
 #' 
-#' @seealso \code{\link{dm2icc}},\code{\link{boot.dbicc}}
+#' @seealso \code{\link{dm2icc}},\code{\link{dm2icc.bt}}
 #' 
 #' @references 
 #' \itemize{
-#' \item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
+#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
 #' }
 #' @keywords Distance matrix
 #' 

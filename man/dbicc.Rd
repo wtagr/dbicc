@@ -10,5 +10,5 @@ dbicc()
 Please move to \code{\link{dm2icc}}
 }
 \seealso{
-\code{\link{dm2icc}}
+\code{\link{dm2icc.bt}}
 }

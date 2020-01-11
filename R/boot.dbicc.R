@@ -1,4 +1,4 @@
-#' Bootstrap Confidence intervals for dbICC
+#' Bootstrap Confidence intervals for dbICC (internal)
 #' 
 #' Nonparametric bootstrapping can be used to construct confidence 
 #' intervals for the Distance-based Intraclass Correlation Coefficient 
@@ -21,56 +21,9 @@
 #' 
 #' @seealso \code{\link{plotdmat}},\code{\link{dm2icc}}
 #' 
-#' @references
-#' \itemize{
-#' \item Reiss et al. (2019). Generalized test-retest reliability based on distances. 
-#' }
-#' 
-#' @keywords Bootstrap, dbICC, reliability
+#' @keywords internal
 #' @import Matrix MASS
-#' @export
-#' @examples
-#' 
-#' ##Point estimates of dbICC
-#' 
-#' # Generation function for R^2 points from multi-normal distribution
-#' R2gen<-function(nsub,nmea,m=1,variance,sds=NULL,pt=FALSE){
-#'     if (is.null(sds)==FALSE) set.seed(sds)
-#'     if (length(nmea)==1) nmea<-rep(1,nsub)*nmea
-#'     sig1<-diag(rep(variance,2))
-#'     mu<-c(0,0)
-#'     sig2<-diag(rep(1,2))
-#'     t<-MASS::mvrnorm(nsub,mu,sig2)
-#'     e<-MASS::mvrnorm(sum(nmea),mu,sig1/m)
-#'     p<-matrix(apply(t,2,rep,times=nmea),ncol=2)+e#(I*J)x2
-#'     if (pt==TRUE) return(list(t=t,p=p))
-#'     if (pt==FALSE) return(p)
-#' }
-#' 
-#' # set the number of the point
-#' I <- 10
-#' 
-#' # set the number of the measurement for each point
-#' J <- 4
-#' 
-#' # generate the sample of R^2 points
-#' varl <- .25 # variance of the 2-d normal distribution
-#' pij <- R2gen(I,J,variance=varl)
-#' 
-#' # calculate the squared distance matrix via Euclidean distance
-#' distmat<-as.matrix(dist(pij))
-#' 
-#' ##Bootstrap Confident intervals
-#' 
-#' B <- 500
-#' bicc <- numeric(B)
-#' for (b in 1:B){
-#'     bs <- sort(sample(I, replace = TRUE))
-#'     bicc[b] <- boot.dbicc(distmat,I,J,bootsamp=bs)
-#' }
-#' 
-#' quantile(bicc, c(.025, .975))
-#' 
+
  
 boot.dbicc <-
 function(dmat, nsub, nmea, bootsamp, adhoc = FALSE) {
