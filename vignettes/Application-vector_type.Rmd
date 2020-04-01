@@ -1,0 +1,19 @@
+---
+title: "Application-vector_type"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Application-vector_type}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(dbicc)
+```
