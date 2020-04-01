@@ -1,0 +1,85 @@
+---
+pagetitle: 'A brief guide for the package **`dbICC`**'
+author: 'Meng Xu'
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Application-vector_type}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+date: "2020/3/15"
+---
+
+# A brief guide for the package **`dbICC`**
+
+This package implements a new approach to measuring the *test-retest* reliability by extending the classical intraclass correlation coefficient (ICC) via arbitrary distances among observations. See Xu et al. (2019) for details.
+
+The key function `dm2icc` gives a value of reliability by inputing size of sample and related *distance matrix*. And `dm2icc.bt` gives (un)corrected Boostrap Confidence Interval of dbICC value.
+
+The dataset `dt2v3` is a sample of fMRI data set, permformed in the paper Xu et al. (2019). `plotdmat` visualizes the related distance matrix.
+
+Please feel free to contact Meng Xu <mxu@campus.haifa.ac.il>, if you have some questions and find bugs.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installation
+
+This package is available only on GitHub now. You can intall it through this:
+```{r install}
+# devtools::install_github("wtagr/dbicc", force = TRUE)
+library(dbicc)
+```
+
+## Preliminary: Distance Matrix
+
+In the package, we do not contain any function on acquirng the distance matrix. But here is a sample distance function based on different distances and norms via the input of a *list* object.
+
+```{r mdist}
+mdist <- function(datalist, method=c("f")){
+  dmat<-matrix(0,length(datalist),length(datalist))
+  for (i in 2:length(datalist)) for (j in 1:(i-1)){
+    if(method=="r"){
+      v1<-datalist[[i]][lower.tri(datalist[[i]], diag = FALSE)]
+      v2<-datalist[[j]][lower.tri(datalist[[j]], diag = FALSE)]
+      r<-cor(v1,v2)
+      dmat[i,j]=dmat[j,i]=sqrt(1-r)
+    }else if(method=='sl1'){
+      dmat[i,j]=dmat[j,i]=sum(abs(datalist[[i]]-datalist[[j]]))
+    }else{
+      dmat[i,j]=dmat[j,i]=norm(datalist[[i]]-datalist[[j]],type=method)
+    }
+  }
+  return(dmat)
+}
+```
+Note that `method = 'f'` denotes the Frobenius norm, `method = 'r'` denotes the $\sqrt{1-r}$ distance, and `method = 'sl1'` denotes the $\ell_1$ distance (sum of absolute differences).
+
+
+Set `dt2v3` as an example:
+
+```{r,  fig.height = 5, fig.width = 5, fig.align = "center"}
+load("dt2v3.rda") # data(dt2v3)
+# calculate correlation matrices
+cor2v3 <- lapply(dt2v3,cor)
+
+# calculate the distance matrix
+distmat <- mdist(cor2v3)
+
+```
+
+Note that `dt2v3` has 25 subjects with 2 scannings each. And the order of the input data list is grouped by the subject.
+
+## Calculate the reliability
+
+Plug in the *distance matrix* to `dm2icc`:
+
+```{r dbicc}
+dm2icc(distmat,25,2)
+```
+
+Get its Confidence Intervel based on 100 boostraps:
+```{r Bootstrap CI}
+dm2icc.bt(distmat,25,2, nB=100)
+```
+
