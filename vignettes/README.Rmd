@@ -62,7 +62,7 @@ mdist <- function(datalist, method=c("f")) {
 
 `dt2v3` contains fMRI time series for 25 individuals with 2 scans each, grouped by individual. Here we compute a matrix of distances among the correlation matrices resulting from these multivariate time series:
 
-```{r,  fig.height = 5, fig.width = 5, fig.align = "center"}
+```{r,  fig.height = 5, fig.width = 7, fig.align = "center"}
 data(dt2v3)
 
 # compute correlation matrices
