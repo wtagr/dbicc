@@ -15,7 +15,7 @@
 #' Maintainer: Meng Xu <mxu@campus.haifa.ac.il>
 #' @seealso \code{\link{dm2icc}}
 #' @references 
-#' P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. To be submitted.
+#' Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear.
 #' 
 NULL
 

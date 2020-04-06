@@ -4,20 +4,22 @@
 \alias{plotdmat}
 \title{Plot the distance matrix in dbICC}
 \usage{
-plotdmat(dmat, nsub, nmea, xlab = NULL)
+plotdmat(dmat, nsub, nmea, xlab = NULL, legend = TRUE)
 }
 \arguments{
-\item{dmat}{See \code{\link{dm2icc}}}
+\item{dmat}{See \code{\link{dm2icc}}.}
 
-\item{nsub}{Number of subject or individual}
+\item{nsub}{number of subject or individual.}
 
-\item{nmea}{A vector containing number of  measurement for each subject or individual; 
+\item{nmea}{a vector containing number of  measurement for each subject or individual;
 if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.}
 
-\item{xlab}{The title for the x axis}
+\item{xlab}{a title for x axis.}
+
+\item{legend}{logicals. It defaults to show the legend bar.}
 }
 \value{
-A ggplot object
+a ggplot object
 }
 \description{
 This function is to plot the distance matrix in dbICC including the segmentation boundary (colored in red) between the within-
@@ -29,7 +31,7 @@ distance and between-distance based on \code{ggplot2}.
 }
 \references{
 \itemize{
-\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+\item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 }
 }
 \seealso{

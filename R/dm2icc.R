@@ -1,20 +1,20 @@
 #' Distance-based Intraclass Correlation Coefficient (dbICC)
 #' 
 #' When the distance among any test-retest datatype can be defined, its reliability 
-#' performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
+#' performed in Xu et al. (2020) can be obtained by this function, to calculate the 
 #' value of dbICC through the related distance matrix. 
 #' 
 #' 
 #' 
-#' @param dmat A distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
+#' @param dmat a distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
 #' Note that the structure of the distance matrix, with the rows or
 #' columns is grouped by subjects or individuals. The details refer to Figure 1 of
-#' Reiss el at., 2019.
-#' @param nsub Number of subject or individual.
-#' @param nmea A vector containing number of measurement for each subject or individual; 
+#' Xu el at. (2020).
+#' @param nsub number of subject or individual.
+#' @param nmea a vector containing number of measurement for each subject or individual; 
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
 #' 
-#' @return A scalar, giving the dbICC value
+#' @return a scalar, giving the dbICC value
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}, Philip Reiss
 #' 
@@ -22,7 +22,7 @@
 #' 
 #' @references
 #' \itemize{
-#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+#' \item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 #' }
 #' 
 #' @keywords dbICC, reliability

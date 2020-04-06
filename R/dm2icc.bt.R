@@ -4,19 +4,19 @@
 #' intervals for the Distance-based Intraclass Correlation Coefficient 
 #' (dbICC) based on samples of the subjects with replacement.
 #' 
-#' @param dmat A distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
+#' @param dmat a distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
 #' Note that the structure of the distance matrix, with the rows or
 #' columns is grouped by subjects or individuals. The details refer to Figure 4 and Table 2 of
-#' Reiss el at., 2019.
-#' @param nsub Number of subject or individual.
-#' @param nmea A vector containing number of the measurement for each subject or individual; 
+#' Xu el at.(2020).
+#' @param nsub number of subject or individual.
+#' @param nmea a vector containing number of the measurement for each subject or individual; 
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
-#' @param nB Number of bootstrap
+#' @param nB number of bootstrap.
 #' 
-#' @param adhoc A logical variable, whether to apply the ad hoc correction when
+#' @param adhoc a logical variable, whether to apply the ad hoc correction when
 #' estimating the dbICC from a bootstrap sample. Default is \code{TRUE}.
-#' @param probs Numeric vector of probabilities with values in [0,1]. \code{c(.025, .975)} is default.
-#' @return Estimates of underlying dbicc sample quantiles in \code{probs}. 95% (\code{c(.025, .975)}) is default.
+#' @param probs a vector of probabilities with values in [0,1]. \code{c(.025, .975)} is default.
+#' @return estimates of underlying dbicc sample quantiles in \code{probs}. 95% (\code{c(.025, .975)}) is default.
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}
 #' 
@@ -24,7 +24,7 @@
 #' 
 #' @references
 #' \itemize{
-#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+#' \item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 #' }
 #' 
 #' @keywords Bootstrap, dbICC, reliability

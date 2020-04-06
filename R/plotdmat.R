@@ -4,13 +4,14 @@
 #' distance and between-distance based on \code{ggplot2}.
 #' 
 #' 
-#' @param dmat See \code{\link{dm2icc}}
-#' @param nsub Number of subject or individual
-#' @param nmea A vector containing number of  measurement for each subject or individual; 
+#' @param dmat See \code{\link{dm2icc}}.
+#' @param nsub number of subject or individual.
+#' @param nmea a vector containing number of  measurement for each subject or individual;
 #' if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.
-#' @param xlab The title for the x axis
+#' @param xlab a title for x axis.
+#' @param legend logicals. It defaults to show the legend bar.
 #' 
-#' @return A ggplot object
+#' @return a ggplot object
 
 #' 
 #' @author Meng Xu \email{mxu@@campus.haifa.ac.il}
@@ -19,7 +20,7 @@
 #' 
 #' @references 
 #' \itemize{
-#' \item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+#' \item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 #' }
 #' @keywords Distance matrix
 #' 
@@ -29,7 +30,7 @@
 #' # See example for dm2icc
 #' 
 plotdmat <-
-function(dmat, nsub, nmea,xlab=NULL){
+function(dmat, nsub, nmea, xlab=NULL, legend=TRUE){
     # plot dist matrix with boundary between within and between distance 
     dmat<-as.matrix(dmat)
     if (length(nmea)==1) nmea=rep(nmea,nsub)
@@ -47,11 +48,11 @@ function(dmat, nsub, nmea,xlab=NULL){
     p<-ggplot(A,aes_(~x,~y))+geom_raster(aes_(fill=~value))+
       geom_path(data=B,aes_(~x,~y),color="red")+
       geom_path(data=B,aes_(~y,~x),color="red")+xlab(xlab)+
-      theme(legend.position = "none",
-            panel.grid = element_blank(),
+      theme(panel.grid = element_blank(),
             axis.title.y = element_blank(),
             axis.title.x=element_text(size=18),
             axis.text = element_blank(),
             axis.ticks = element_blank())+scale_y_reverse() 
+    if (!legend) p <- p + theme(legend.position="none")
     return(p)
 }

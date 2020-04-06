@@ -7,22 +7,22 @@
 dm2icc(dmat, nsub, nmea)
 }
 \arguments{
-\item{dmat}{A distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
+\item{dmat}{a distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
 Note that the structure of the distance matrix, with the rows or
 columns is grouped by subjects or individuals. The details refer to Figure 1 of
-Reiss el at., 2019.}
+Xu el at. (2020).}
 
-\item{nsub}{Number of subject or individual.}
+\item{nsub}{number of subject or individual.}
 
-\item{nmea}{A vector containing number of measurement for each subject or individual; 
+\item{nmea}{a vector containing number of measurement for each subject or individual; 
 if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.}
 }
 \value{
-A scalar, giving the dbICC value
+a scalar, giving the dbICC value
 }
 \description{
 When the distance among any test-retest datatype can be defined, its reliability 
-performed in Reiss et al. (2019) can be obtained by this function, to calculate the 
+performed in Xu et al. (2020) can be obtained by this function, to calculate the 
 value of dbICC through the related distance matrix.
 }
 \examples{
@@ -66,7 +66,7 @@ dm2icc(distmat,I,J)
 }
 \references{
 \itemize{
-\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+\item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 }
 }
 \seealso{

@@ -1,8 +1,8 @@
 Package: dbicc
 Type: Package
 Title: Generalized reliability based on distances
-Version: 0.12
-Date: 2019-02-11
+Version: 0.13
+Date: 2020-04-06
 Author: Meng Xu, Philip Reiss
 Maintainer: Meng Xu <mxu@campus.haifa.ac.il>
 Depends: R (>= 3.5.0)

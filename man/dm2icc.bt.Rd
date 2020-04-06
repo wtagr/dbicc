@@ -7,25 +7,25 @@
 dm2icc.bt(dmat, nsub, nmea, nB, probs = c(0.025, 0.975), adhoc = TRUE)
 }
 \arguments{
-\item{dmat}{A distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
+\item{dmat}{a distance matrix or an object of \code{dist}, of dimension \code{sum(nmea)*sum(nmea)}. 
 Note that the structure of the distance matrix, with the rows or
 columns is grouped by subjects or individuals. The details refer to Figure 4 and Table 2 of
-Reiss el at., 2019.}
+Xu el at.(2020).}
 
-\item{nsub}{Number of subject or individual.}
+\item{nsub}{number of subject or individual.}
 
-\item{nmea}{A vector containing number of the measurement for each subject or individual; 
+\item{nmea}{a vector containing number of the measurement for each subject or individual; 
 if \code{nmea} is a scalar, it means each subject shares the same number of the measurement.}
 
-\item{nB}{Number of bootstrap}
+\item{nB}{number of bootstrap.}
 
-\item{probs}{Numeric vector of probabilities with values in [0,1]. \code{c(.025, .975)} is default.}
+\item{probs}{a vector of probabilities with values in [0,1]. \code{c(.025, .975)} is default.}
 
-\item{adhoc}{A logical variable, whether to apply the ad hoc correction when
+\item{adhoc}{a logical variable, whether to apply the ad hoc correction when
 estimating the dbICC from a bootstrap sample. Default is \code{TRUE}.}
 }
 \value{
-Estimates of underlying dbicc sample quantiles in \code{probs}. 95% (\code{c(.025, .975)}) is default.
+estimates of underlying dbicc sample quantiles in \code{probs}. 95% (\code{c(.025, .975)}) is default.
 }
 \description{
 Nonparametric bootstrapping can be used to construct confidence 
@@ -69,7 +69,7 @@ dm2icc.bt(distmat, I, J, 500)
 }
 \references{
 \itemize{
-\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+\item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 }
 }
 \seealso{

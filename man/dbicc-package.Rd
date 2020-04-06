@@ -11,7 +11,7 @@ access the reliability of new and complex types of data in terms of arbitrary
 distances among observations.
 }
 \references{
-P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. To be submitted.
+Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear.
 }
 \seealso{
 \code{\link{dm2icc}}

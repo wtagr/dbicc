@@ -21,7 +21,7 @@ http://www.nitrc.org/projects/nyu_trt
 }
 \references{
 \itemize{
-\item P.T. Reiss, M. Xu, I. Cribben (2019). Generalized reliability based on distances. \url{https://arxiv.org/abs/1912.07137}.
+\item Xu, M., Reiss, P. T., and Cribben, I. (2020). Generalized reliability based on distances. Biometrics, to appear. \url{https://arxiv.org/abs/1912.07137}.
 
 \item Gordon, E. M., Laumann, T. O., Adeyemo, B., Huckins, J. F., Kelley, W. M., and Petersen,
 S. E. (2016). Generation and evaluation of a cortical area parcellation from resting-state
